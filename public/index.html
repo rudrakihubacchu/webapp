@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Browse anime titles and episode information.">
+  <title>AnimeSiddhesh | Anime Hub</title>
+
+  <link rel="preconnect" href="https://api.jikan.moe">
+  <link rel="preconnect" href="https://cdn.myanimelist.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="/js/app.js" type="module"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="AnimeSiddhesh home">
+      <span class="brand-icon" aria-hidden="true">▶</span>
+      <span>AnimeSiddhesh</span>
+    </a>
+
+    <form id="search-form" class="search">
+      <label class="sr-only" for="search-input">Search anime</label>
+      <input id="search-input" type="search" placeholder="Search anime…" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+
+    <span class="status"><span class="status-dot"></span> API ready</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+    <div class="hero-content">
+      <span class="eyebrow">ANIME DISCOVERY</span>
+      <h1>Find your next <span>favorite.</span></h1>
+      <p>Browse popular anime and view episode information.</p>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow" id="result-label">EXPLORE</p>
+        <h2 id="section-title">Top Anime</h2>
+      </div>
+      <button id="load-more" class="secondary-button" type="button" hidden>Load more</button>
+    </div>
+
+    <p id="notice" class="notice" role="status" aria-live="polite"></p>
+    <section id="anime-grid" class="anime-grid" aria-label="Anime results"></section>
+  </main>
+
+  <dialog id="anime-dialog" class="dialog">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">ANIME DETAILS</p>
+        <h2 id="dialog-title">Anime title</h2>
+      </div>
+      <button id="close-dialog" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="details">
+        <img id="dialog-image" class="detail-image" alt="">
+        <div>
+          <p id="dialog-meta" class="muted"></p>
+          <h3>Synopsis</h3>
+          <p id="dialog-synopsis" class="synopsis"></p>
+        </div>
+      </div>
+
+      <div class="episodes-heading">
+        <h3>Episodes</h3>
+        <span id="episode-count" class="muted"></span>
+      </div>
+      <p id="episode-notice" class="muted"></p>
+      <div id="episode-list" class="episode-list"></div>
+      <button id="episodes-more" class="secondary-button full-width" type="button" hidden>
+        Load more episodes
+      </button>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
