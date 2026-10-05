@@ -1,11 +1,16 @@
 {
-  "name": "animesiddhesh-app",
+  "name": "animesiddhesh",
   "version": "1.0.0",
+  "private": true,
+  "description": "Anime catalog website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^5.1.0"
   }
 }
